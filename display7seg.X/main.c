@@ -21,7 +21,7 @@ void main(void)
 {
     display7seg_init();
     botoes_init();
-    char cont = 0;
+    signed char cont = 0;
     char estado = 0;
     
     while(1)
@@ -55,10 +55,15 @@ void main(void)
             
         }
             display7seg(cont);
-            if( cont >= 16)
-            cont = 0;
-            if( cont < 0)
-                cont = 15;
+            
+                if( cont >= 10 )
+                    cont = 0;
+                    
+                if( cont < 0)
+                    cont = 9;
+              
+            
+                
     }
       
 }
